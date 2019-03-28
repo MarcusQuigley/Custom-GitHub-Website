@@ -1,6 +1,5 @@
 class GitApi {
   getUrlUserDetails = 'https://api.github.com/users';
-  ;
   getUrlend = '/events/public';
 
   constructor(clientId, clientSecret) {
@@ -17,6 +16,7 @@ class GitApi {
 
   async getUserDetails(userId) {
     return await this.get(userId);
+
   }
   async getUserRepos(userId) {
     return await this.get(userId, '/repos');
@@ -31,7 +31,7 @@ class GitApi {
 
   createUrl(url, user, other) {
     let urlFull = `${url}/${user}${other}?client_id=${this.gitClientId}&client_secret=${this.gitClientSecret}`;
-   // console.log(urlFull);
+    // console.log(urlFull);
     return urlFull;
   }
 }
